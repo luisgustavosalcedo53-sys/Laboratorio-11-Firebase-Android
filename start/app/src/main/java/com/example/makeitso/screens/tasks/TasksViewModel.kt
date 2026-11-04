@@ -37,10 +37,10 @@ class TasksViewModel @Inject constructor(
 ) : MakeItSoViewModel(logService) {
   val options = mutableStateOf<List<String>>(listOf())
 
-  val tasks = emptyFlow<List<Task>>()
+  val tasks = storageService.tasks
 
   fun loadTaskOptions() {
-    //TODO
+    options.value = TaskActionOption.getOptions(configurationService.isShowTaskEditButtonConfig)
   }
 
   fun onTaskCheckChange(task: Task) {
