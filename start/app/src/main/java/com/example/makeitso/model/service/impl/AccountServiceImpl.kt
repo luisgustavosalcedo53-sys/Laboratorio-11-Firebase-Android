@@ -60,7 +60,7 @@ class AccountServiceImpl @Inject constructor(private val auth: FirebaseAuth) : A
   override suspend fun linkAccount(email: String, password: String) {
     val credential = EmailAuthProvider.getCredential(email, password)
     val user = requireNotNull(auth.currentUser) { "No hay una sesión activa" }
-    user.linkWithCredential(credential).await()
+    trace(LINK_ACCOUNT_TRACE) { user.linkWithCredential(credential).await() }
   }
 
   override suspend fun deleteAccount() {
