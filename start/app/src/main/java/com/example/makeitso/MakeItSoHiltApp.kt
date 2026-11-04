@@ -19,4 +19,12 @@ package com.example.makeitso
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
-@HiltAndroidApp class MakeItSoHiltApp : Application() {}
+@HiltAndroidApp class MakeItSoHiltApp : Application() {
+  override fun onCreate() {
+    super.onCreate()
+    if (BuildConfig.FLAVOR == "dev") {
+      com.google.firebase.auth.FirebaseAuth.getInstance().useEmulator("10.0.2.2", 9099)
+      com.google.firebase.firestore.FirebaseFirestore.getInstance().useEmulator("10.0.2.2", 8080)
+    }
+  }
+}

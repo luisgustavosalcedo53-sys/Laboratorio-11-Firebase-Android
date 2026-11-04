@@ -1,0 +1,23 @@
+{
+  "project_info": {
+    "project_number": "123456789012",
+    "project_id": "demo-lab11",
+    "storage_bucket": "demo-lab11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123456789012:android:0000000000000000000000",
+        "android_client_info": {
+          "package_name": "com.example.makeitso"
+        }
+      },
+      "api_key": [
+        {
+          "current_key": "AIza00000000000000000000000000000000000"
+        }
+      ]
+    }
+  ],
+  "configuration_version": "1"
+}
